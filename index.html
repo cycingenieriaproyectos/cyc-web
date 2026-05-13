@@ -14,13 +14,10 @@
   <meta property="og:description" content="Soluciones integrales en ingeniería civil, sanitaria y ambiental. Diseño, consultoría, permisos y supervisión." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.ingenieriacyc.cc" />
-  <meta property="og:image" content="https://www.ingenieriacyc.cc/og-image-1200x630.png" />
+  <meta property="og:image" content="https://www.ingenieriacyc.cc/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Preload optimized hero (ajusta la ruta si la guardas en otra carpeta) -->
-  <link rel="preload" href="/hero-1600x900.webp" as="image" type="image/webp" />
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -51,10 +48,10 @@
 
     main{padding-top:96px}
 
-    /* Hero: nueva imagen de fondo solo en inicio */
+    /* Hero: imagen original (sin webp/preload) */
     .hero{
       min-height:66vh;display:flex;align-items:flex-start;justify-content:flex-end;padding:56px 20px;
-      background-image: url("/hero-1600x900.webp");
+      background-image: url("/hero-inicio.png");
       background-position:center;
       background-size:cover;
       background-repeat:no-repeat;
@@ -171,9 +168,8 @@
 </header>
 
 <main>
-  <!-- Hero: nueva imagen de fondo; botón de portafolio eliminado -->
+  <!-- Hero: imagen original -->
   <section id="inicio" class="hero" role="region" aria-label="Inicio">
-    <!-- inner alineado a la derecha, inmediatamente debajo del logo -->
     <div class="inner">
       <h1>C&C Ingeniería y Proyectos</h1>
       <p class="lead">Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
@@ -183,7 +179,7 @@
     </div>
   </section>
 
-  <!-- Nosotros (conservada) -->
+  <!-- Nosotros -->
   <section id="nosotros" aria-label="Nosotros">
     <h2>Nosotros</h2>
     <div class="who">
@@ -202,7 +198,7 @@
     </div>
   </section>
 
-  <!-- Portafolio (conservado) -->
+  <!-- Portafolio -->
   <section id="portafolio" aria-label="Portafolio">
     <h2>Nuestro Portafolio de Servicios</h2>
     <p class="lead">Proyectos y servicios destacados. Haz clic en "Ver caso" para más detalles.</p>
@@ -261,7 +257,7 @@
     </div>
   </section>
 
-  <!-- Ubicación: Google Maps + imagen ubicacion.png centrada al lado -->
+  <!-- Ubicación -->
   <section id="ubicacion" aria-label="Ubicación">
     <h2>Ubicación</h2>
     <div class="location">
@@ -272,13 +268,12 @@
       </div>
 
       <div class="bg" aria-hidden="true">
-        <!-- imagen centrada y contenida -->
         <img src="/ubicacion.png" alt="Mapa ilustrado Oriente Antioqueño" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- Contacto (conservado: formulario y detalles) -->
+  <!-- Contacto -->
   <section id="contacto" aria-label="Contacto">
     <h2>Contáctanos</h2>
     <div class="contact-wrap">
