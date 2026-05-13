@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C&C Ingeniería y Proyectos</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Fuentes y librerías -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -140,4 +142,93 @@
     }
     .social i {
       font-size: 2em;
-      color
+      color: #4da6ff;
+    }
+    .social p {
+      margin-top: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer {
+      background: #1c2a39;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="C&C Ingeniería y Proyectos">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes">Quiénes somos</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section id="inicio">
+  <h1>C&C Ingeniería y Proyectos</h1>
+  <p>Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
+  <a class="btn" href="https://wa.me/573117654559" target="_blank">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+</section>
+
+<section id="quienes">
+  <h2>¿Quiénes somos?</h2>
+  <p>En <strong>C&C Ingeniería y Proyectos</strong> somos una empresa multidisciplinaria comprometida con la ingeniería civil, sanitaria y ambiental. Brindamos soluciones integrales para el diseño, consultoría, gestión y ejecución de proyectos, garantizando calidad técnica, cumplimiento normativo y sostenibilidad.</p>
+  <p>Nos distingue nuestra capacidad de integrar innovación, eficiencia y responsabilidad ambiental en cada etapa del proceso, aportando valor real a las comunidades y al desarrollo territorial.</p>
+  <img src="quienes.png" alt="Equipo de trabajo C&C Ingeniería y Proyectos">
+</section>
+
+<section id="portafolio">
+  <h2>Nuestro Portafolio de Servicios</h2>
+  <div class="grid">
+    <div class="card"><img src="estructural.png" alt="Diseño estructural"><h3>Diseño estructural</h3><p>Modelado de estructuras en concreto, acero y madera.</p></div>
+    <div class="card"><img src="hidrosanitario.png" alt="Diseño hidrosanitario"><h3>Diseño hidrosanitario</h3><p>Redes de agua, alcantarillado sanitario y pluvial.</p></div>
+    <div class="card"><img src="ambiental.png" alt="Gestión ambiental"><h3>Gestión ambiental</h3><p>Plantas de tratamiento y soluciones sostenibles.</p></div>
+    <div class="card"><img src="interventoria.png" alt="Supervisión e interventoría"><h3>Supervisión e interventoría</h3><p>Control técnico, financiero y ambiental en obra.</p></div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <h2>Ubicación</h2>
+  <p>Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</p>
+  <img src="ubicacion.png" alt="Mapa Oriente Antioqueño">
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="social">
+    <div>
+      <a href="https://wa.me/573117654559" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <p>WhatsApp</p>
+    </div>
+    <div>
+      <a href="https://www.instagram.com/inge.cyc" target="_blank"><i class="fab fa-instagram"></i></a>
+      <p>Instagram</p>
+    </div>
+    <div>
+      <a href="mailto:cyc.ingenieria.proyectos@gmail.com"><i class="fas fa-envelope"></i></a>
+      <p>Email</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 C&C Ingeniería y Proyectos – Todos los derechos reservados.
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold
