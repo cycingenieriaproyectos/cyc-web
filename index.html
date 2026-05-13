@@ -4,219 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C&C Ingeniería y Proyectos</title>
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Fuentes y librerías -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: #333;
-      scroll-behavior: smooth;
-      background: #f9f9fb;
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --accent:#3f8fd6; --muted:#6b7280; --dark:#162029;
     }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #1c2a39;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      z-index: 1000;
-    }
-    header img {
-      height: 50px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex: 1;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 500;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav a:hover {
-      color: #4da6ff;
-    }
-    section {
-      padding: 100px 40px;
-      min-height: 100vh;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #inicio {
-      background: url("inicio.png") no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    #inicio h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .btn {
-      background: #4da6ff;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #1c2a39;
-    }
-    #quienes {
-      background: white;
-      color: #1c2a39;
-      text-align: center;
-    }
-    #quienes img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    #portafolio {
-      background: url("portafolio.png") no-repeat center center/cover;
-      background-size: cover;
-      color: #1c2a39;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    #ubicacion {
-      background: url("ubicacion.png") no-repeat center center/cover;
-      background-size: cover;
-      color: #1c2a39;
-      text-align: center;
-    }
-    #contacto {
-      background: url("contacto.png") no-repeat center center/cover;
-      background-size: cover;
-      color: #1c2a39;
-      text-align: center;
-    }
-    .social {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .social div {
-      margin: 0 20px;
-      text-align: center;
-    }
-    .social i {
-      font-size: 2em;
-      color: #4da6ff;
-    }
-    .social p {
-      margin-top: 5px;
-      font-family: 'Poppins', sans-serif;
-    }
-    footer {
-      background: #1c2a39;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--dark);line-height:1.5}
+    header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;padding:0 28px;background:linear-gradient(90deg, rgba(22,32,41,0.95), rgba(22,32,41,0.9));color:#fff;z-index:1200;box-shadow:0 2px 8px rgba(10,15,20,0.12)}
+    header img{height:44px}
+    nav{display:flex;gap:18px;margin-left:auto}
+    nav a{color:#e6eefc;text-decoration:none;font-weight:600;font-family:'Poppins',sans-serif;font-size:0.95rem;padding:8px 10px;border-radius:6px}
+    nav a:hover{background:rgba(255,255,255,0.04);color:var(--accent)}
+    main{padding-top:84px}
+    .hero{min-height:72vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(28,42,57,0.6), rgba(28,42,57,0.6)), url("inicio.png") center/cover no-repeat;color:#fff;text-align:center;padding:60px 20px}
+    .hero .inner{max-width:980px}
+    .hero h1{font-family:'Poppins',sans-serif;font-size:2.6rem;margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:rgba(255,255,255,0.9);font-size:1.05rem}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+    section{padding:64px 20px;max-width:1200px;margin:0 auto}
+    h2{font-family:'Poppins',sans-serif;color:var(--dark);margin:0 0 18px;font-size:1.6rem}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .who{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:var(--card);padding:28px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,32,0.06)}
+    .who .who-image{flex:0 0 360px;max-width:420px;min-width:220px}
+    .who .who-image img{width:100%;height:auto;border-radius:10px;object-fit:cover;box-shadow:0 6px 18px rgba(16,24,32,0.06)}
+    .who .who-text{flex:1 1 320px;min-width:260px}
+    .who .who-text p{color:var(--muted);margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,32,0.04);display:flex;flex-direction:column;gap:12px}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:0;font-size:1.05rem;color:var(--dark)}
+    .card p{margin:0;color:var(--muted);font-size:0.95rem}
+    .location{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
+    .location .map{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,32,0.04);min-height:320px}
+    .location .bg{background:url("ubicacion.png") center/cover no-repeat;border-radius:10px;min-height:320px;box-shadow:0 6px 18px rgba(16,24,32,0.04)}
+    .contact-wrap{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
+    .contact-card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,32,0.04)}
+    .contact-details{display:flex;flex-direction:column;gap:10px}
+    .contact-details .item{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
+    .contact-details .item strong{color:var(--dark);display:block}
+    .socials{display:flex;gap:12px;margin-top:8px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(63,143,214,0.08);color:var(--accent);text-decoration:none}
+    form{display:flex;flex-direction:column;gap:10px}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:0.95rem}
+    textarea{min-height:120px;resize:vertical}
+    .form-actions{display:flex;gap:10px;align-items:center}
+    .secondary{background:transparent;border:1px solid #d6dbe6;color:var(--dark);padding:10px 14px;border-radius:8px;text-decoration:none}
+    footer{padding:28px 20px;text-align:center;color:#fff;background:linear-gradient(90deg,#0f1a22,#162029);margin-top:28px}
+    .msg{font-size:0.95rem;margin-top:8px}
+    @media (max-width:980px){
+      .location,.contact-wrap{grid-template-columns:1fr}
+      .who{flex-direction:column}
+      header{padding:0 16px}
+      .hero h1{font-size:2rem}
     }
   </style>
 </head>
 <body>
-
 <header>
   <img src="logo.png" alt="C&C Ingeniería y Proyectos">
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#quienes">Quiénes somos</a>
+    <a href="#nosotros">Nosotros</a>
     <a href="#portafolio">Portafolio</a>
     <a href="#ubicacion">Ubicación</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
-<section id="inicio">
-  <h1>C&C Ingeniería y Proyectos</h1>
-  <p>Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
-  <a class="btn" href="https://wa.me/573117654559" target="_blank">
-    <i class="fab fa-whatsapp"></i> WhatsApp
-  </a>
-</section>
-
-<section id="quienes">
-  <h2>¿Quiénes somos?</h2>
-  <p>En <strong>C&C Ingeniería y Proyectos</strong> somos una empresa multidisciplinaria comprometida con la ingeniería civil, sanitaria y ambiental. Brindamos soluciones integrales para el diseño, consultoría, gestión y ejecución de proyectos, garantizando calidad técnica, cumplimiento normativo y sostenibilidad.</p>
-  <p>Nos distingue nuestra capacidad de integrar innovación, eficiencia y responsabilidad ambiental en cada etapa del proceso, aportando valor real a las comunidades y al desarrollo territorial.</p>
-  <img src="quienes.png" alt="Equipo de trabajo C&C Ingeniería y Proyectos">
-</section>
-
-<section id="portafolio">
-  <h2>Nuestro Portafolio de Servicios</h2>
-  <div class="grid">
-    <div class="card"><img src="estructural.png" alt="Diseño estructural"><h3>Diseño estructural</h3><p>Modelado de estructuras en concreto, acero y madera.</p></div>
-    <div class="card"><img src="hidrosanitario.png" alt="Diseño hidrosanitario"><h3>Diseño hidrosanitario</h3><p>Redes de agua, alcantarillado sanitario y pluvial.</p></div>
-    <div class="card"><img src="ambiental.png" alt="Gestión ambiental"><h3>Gestión ambiental</h3><p>Plantas de tratamiento y soluciones sostenibles.</p></div>
-    <div class="card"><img src="interventoria.png" alt="Supervisión e interventoría"><h3>Supervisión e interventoría</h3><p>Control técnico, financiero y ambiental en obra.</p></div>
-  </div>
-</section>
-
-<section id="ubicacion">
-  <h2>Ubicación</h2>
-  <p>Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</p>
-  <img src="ubicacion.png" alt="Mapa Oriente Antioqueño">
-</section>
-
-<section id="contacto">
-  <h2>Contacto</h2>
-  <div class="social">
-    <div>
-      <a href="https://wa.me/573117654559" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <p>WhatsApp</p>
+<main>
+  <section id="inicio" class="hero">
+    <div class="inner">
+      <h1>C&C Ingeniería y Proyectos</h1>
+      <p class="lead">Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
+      <a class="btn" href="https://wa.me/573117654559" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
-    <div>
-      <a href="https://www.instagram.com/inge.cyc" target="_blank"><i class="fab fa-instagram"></i></a>
-      <p>Instagram</p>
+  </section>
+
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <div class="who">
+      <div class="who-image">
+        <img src="quienes.png" alt="Equipo C&C">
+      </div>
+      <div class="who-text">
+        <p>En <strong>C&C Ingeniería y Proyectos</strong> somos una empresa multidisciplinaria comprometida con la ingeniería civil, sanitaria y ambiental. Brindamos soluciones integrales para el diseño, consultoría, gestión y ejecución de proyectos, garantizando calidad técnica, cumplimiento normativo y sostenibilidad.</p>
+        <p>Integramos innovación, eficiencia y responsabilidad ambiental en cada etapa del proceso, aportando valor real a las comunidades y al desarrollo territorial.</p>
+      </div>
     </div>
-    <div>
-      <a href="mailto:cyc.ingenieria.proyectos@gmail.com"><i class="fas fa-envelope"></i></a>
-      <p>Email</p>
+  </section>
+
+  <section id="portafolio">
+    <h2>Nuestro Portafolio de Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="estructural.png" alt="Diseño estructural">
+        <h3>Diseño estructural</h3>
+        <p>Modelado de estructuras en concreto, acero y madera.</p>
+      </div>
+      <div class="card">
+        <h3>Diseño hidrosanitario</h3>
+        <p>Redes de agua, alcantarillado sanitario y pluvial.</p>
+      </div>
+      <div class="card">
+        <img src="ambiental.png" alt="Gestión ambiental">
+        <h3>Gestión ambiental</h3>
+        <p>Plantas de tratamiento y soluciones sostenibles.</p>
+      </div>
+      <div class="card">
+        <h3>Supervisión e interventoría</h3>
+        <p>Control técnico, financiero y ambiental en obra.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <div class="location">
+      <div class="map contact-card">
+        <p class="lead">Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</p>
+        <iframe src="https://www.google.com/maps?q=Rionegro%20Antioquia%20Plaza%20Linares&output=embed" width="100%" height="320" style="border:0;border-radius:8px" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="bg" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <div class="contact-wrap">
+      <div class="contact-card">
+        <div class="contact-details">
+          <div class="item"><i class="fas fa-envelope" style="color:var(--accent)"></i><div><strong>Email</strong><span style="display:block;color:var(--muted)">cyc.ingenieria.proyectos@gmail.com</span></div></div>
+          <div class="item"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i><div><strong>Dirección</strong><span style="display:block;color:var(--muted)">Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</span></div></div>
+          <div class="item"><i class="fas fa-phone" style="color:var(--accent)"></i><div><strong>Teléfono</strong><span style="display:block;color:var(--muted)">+57 311 765 4559</span></div></div>
+        </div>
+        <div style="margin-top:14px">
+          <div class="socials">
+            <a href="https://wa.me/573117654559" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/inge.cyc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:cyc.ingenieria.proyectos@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <!-- Formspree form: action actualizado -->
+        <form id="contactForm" action="https://formspree.io/f/xnjwrbqa" method="POST">
+          <input name="name" type="text" id="name" placeholder="Tu nombre" required>
+          <input name="email" type="email" id="email" placeholder="Tu correo" required>
+          <input name="subject" type="text" id="subject" placeholder="Asunto" required>
+          <textarea name="message" id="message" placeholder="Escribe tu mensaje" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn">Enviar mensaje</button>
+            <a class="secondary" href="mailto:cyc.ingenieria.proyectos@gmail.com">Enviar por correo</a>
+          </div>
+          <p id="formMsg" class="msg" style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   © 2026 C&C Ingeniería y Proyectos – Todos los derechos reservados.
@@ -226,13 +175,41 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+  }, { threshold: 0.18 });
   sections.forEach(section => observer.observe(section));
+
+  // Formspree AJAX submit usando tu endpoint
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.style.display = 'none';
+    const formData = new FormData(form);
+    const action = form.getAttribute('action');
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        msg.style.display = 'block';
+        msg.style.color = 'green';
+        msg.textContent = 'Mensaje enviado. Gracias, te contactaremos pronto.';
+        form.reset();
+      } else {
+        const data = await res.json();
+        msg.style.display = 'block';
+        msg.style.color = 'crimson';
+        msg.textContent = data?.error || 'Ocurrió un error al enviar. Intenta de nuevo.';
+      }
+    } catch (err) {
+      msg.style.display = 'block';
+      msg.style.color = 'crimson';
+      msg.textContent = 'No se pudo conectar con el servidor. Revisa tu conexión.';
+    }
+  });
 });
 </script>
 </body>
