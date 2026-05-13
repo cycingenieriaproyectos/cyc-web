@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>C&C Ingeniería y Proyectos — Ingeniería civil, sanitaria y ambiental</title>
 
   <!-- SEO / Open Graph -->
-  <meta name="description" content="C&C Ingeniería y Proyectos: diseño, consultoría y ejecución en ingeniería civil, sanitaria y ambiental. Permisos ambientales, plantas de tratamiento, modelación hidráulica y supervisión.">
-  <meta property="og:title" content="C&C Ingeniería y Proyectos">
-  <meta property="og:description" content="Soluciones integrales en ingeniería civil, sanitaria y ambiental. Diseño, consultoría, permisos y supervisión.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.ingenieriacyc.cc">
-  <meta property="og:image" content="https://www.ingenieriacyc.cc/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="C&C Ingeniería y Proyectos: diseño, consultoría y ejecución en ingeniería civil, sanitaria y ambiental. Permisos ambientales, plantas de tratamiento, modelación hidráulica y supervisión." />
+  <meta name="keywords" content="ingeniería civil, ingeniería sanitaria, ingeniería ambiental, diseño estructural, diseño hidrosanitario, plantas de tratamiento, permisos ambientales, interventoría, consultoría" />
+  <meta name="author" content="C&C Ingeniería y Proyectos" />
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta property="og:title" content="C&C Ingeniería y Proyectos" />
+  <meta property="og:description" content="Soluciones integrales en ingeniería civil, sanitaria y ambiental. Diseño, consultoría, permisos y supervisión." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ingenieriacyc.cc" />
+  <meta property="og:image" content="https://www.ingenieriacyc.cc/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preload optimized hero (ajusta la ruta si la guardas en otra carpeta) -->
+  <link rel="preload" href="/assets/img/hero-1600x900.webp" as="image" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     :root{
@@ -48,9 +54,13 @@
     /* Hero: nueva imagen de fondo solo en inicio */
     .hero{
       min-height:66vh;display:flex;align-items:flex-start;justify-content:flex-end;padding:56px 20px;
-      background:url("hero-inicio.png") center/cover no-repeat;
+      background-image: url("/assets/img/hero-1600x900.webp");
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
       color:#fff;text-align:right;position:relative;
     }
+
     /* .hero-inner alineado a la derecha, inmediatamente debajo del logo; más abajo para no tapar logo del fondo */
     .hero .inner{
       max-width:520px;
@@ -58,9 +68,10 @@
       margin-right:20px;
       padding-top:140px; /* baja el contenido varios renglones para no tapar el logo del fondo */
       text-align:right;
-      background:linear-gradient(180deg, rgba(255,255,255,0.00), rgba(255,255,255,0.00)); /* transparente, solo para control */
+      background:linear-gradient(180deg, rgba(255,255,255,0.00), rgba(255,255,255,0.00));
     }
-    /* Texto más oscuro para contraste con el fondo */
+
+    /* Texto más oscuro para contraste con el fondo y colocado justo debajo del logo */
     .hero h1{
       font-family:'Poppins',sans-serif;font-size:2.4rem;margin:0 0 10px;color:rgba(8,12,16,0.98);line-height:1.05;
       letter-spacing:0.2px;
@@ -155,7 +166,7 @@
   </div>
 
   <div class="logo-wrap" aria-hidden="false">
-    <img src="logo.png" alt="C&C Ingeniería y Proyectos" />
+    <img src="/assets/img/logo.png" alt="C&C Ingeniería y Proyectos" />
   </div>
 </header>
 
@@ -177,7 +188,7 @@
     <h2>Nosotros</h2>
     <div class="who">
       <div class="who-image">
-        <img src="quienes.png" alt="Equipo C&C" loading="lazy">
+        <img src="/assets/img/quienes.png" alt="Equipo C&C" loading="lazy">
       </div>
       <div class="who-text">
         <p>En <strong>C&C Ingeniería y Proyectos</strong> ofrecemos soluciones integrales en ingeniería civil, sanitaria y ambiental: diseño, consultoría, permisos y supervisión técnica.</p>
@@ -198,7 +209,7 @@
 
     <div class="grid">
       <div class="card">
-        <img src="estructural.png" alt="Diseño estructural" loading="lazy">
+        <img src="/assets/img/estructural.png" alt="Diseño estructural" loading="lazy">
         <h3>Diseño estructural</h3>
         <p>Modelado y cálculo de estructuras en concreto, acero y madera para edificaciones y obras civiles.</p>
         <div class="meta"><span></span><a href="#" data-case='{"title":"Diseño estructural","desc":"Cálculo y modelado de estructuras en concreto, acero y madera. Entregables: planos, memoria de cálculo y especificaciones."}'>Ver caso</a></div>
@@ -211,7 +222,7 @@
       </div>
 
       <div class="card">
-        <img src="ambiental.png" alt="Gestión ambiental" loading="lazy">
+        <img src="/assets/img/ambiental.png" alt="Gestión ambiental" loading="lazy">
         <h3>Gestión ambiental</h3>
         <p>Diseño de plantas de tratamiento, gestión de permisos y estudios de impacto ambiental.</p>
         <div class="meta"><span></span><a href="#" data-case='{"title":"Gestión ambiental","desc":"Diseño de PTAP/PTARD, permisos de vertimientos y gestión ambiental integral."}'>Ver caso</a></div>
@@ -230,7 +241,7 @@
       </div>
 
       <div class="card">
-        <img src="interventoria.png" alt="Interventoría" loading="lazy">
+        <img src="/assets/img/interventoria.png" alt="Interventoría" loading="lazy">
         <h3>Control de calidad en obra</h3>
         <p>Ensayos, control de materiales y seguimiento técnico para asegurar la correcta ejecución.</p>
         <div class="meta"><span></span><a href="#" data-case='{"title":"Control de calidad en obra","desc":"Ensayos de materiales, control de procesos y seguimiento técnico en obra."}'>Ver caso</a></div>
@@ -262,7 +273,7 @@
 
       <div class="bg" aria-hidden="true">
         <!-- imagen centrada y contenida -->
-        <img src="ubicacion.png" alt="Mapa ilustrado Oriente Antioqueño" loading="lazy">
+        <img src="/assets/img/ubicacion.png" alt="Mapa ilustrado Oriente Antioqueño" loading="lazy">
       </div>
     </div>
   </section>
