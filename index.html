@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyC Ingeniería y Proyectos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0a0a23;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      z-index: 1000;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #f57c00;
+    }
+    section {
+      padding: 100px 40px;
+      min-height: 100vh;
+    }
+    #inicio {
+      background: linear-gradient(to right, #0a0a23, #1a1a40);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #inicio h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #f57c00;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff9800;
+    }
+    #portafolio {
+      background: #f4f4f4;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    #ubicacion iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+    footer {
+      background: #0a0a23;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .social a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="CyC Ingeniería y Proyectos">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section id="inicio">
+  <h1>CyC Ingeniería y Proyectos</h1>
+  <p>Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
+  <a class="btn" href="https://wa.me/573117654559" target="_blank">Contáctanos por WhatsApp</a>
+</section>
+
+<section id="portafolio">
+  <h2>Nuestro Portafolio de Servicios</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Diseño estructural</h3>
+      <p>Cálculo y modelado de estructuras en concreto, acero y madera para edificaciones y obras civiles.</p>
+    </div>
+    <div class="card">
+      <h3>Diseño arquitectónico</h3>
+      <p>Desarrollo de planos, modelado 3D y optimización de espacios según normativa y funcionalidad.</p>
+    </div>
+    <div class="card">
+      <h3>Diseño hidrosanitario</h3>
+      <p>Planeación de redes de agua, alcantarillado sanitario y pluvial con cumplimiento normativo.</p>
+    </div>
+    <div class="card">
+      <h3>Supervisión e interventoría</h3>
+      <p>Control y seguimiento de proyectos para garantizar cumplimiento técnico, financiero y ambiental.</p>
+    </div>
+    <div class="card">
+      <h3>Diseño de PTARD y PTAP</h3>
+      <p>Soluciones adaptadas a cada contexto, considerando eficiencia operativa y costos.</p>
+    </div>
+    <div class="card">
+      <h3>Permisos de vertimientos</h3>
+      <p>Trámite y gestión ante entidades ambientales para disposición adecuada de aguas residuales.</p>
+    </div>
+    <div class="card">
+      <h3>Ocupación de cauce</h3>
+      <p>Evaluación de impactos y obtención de permisos para proyectos de infraestructura.</p>
+    </div>
+    <div class="card">
+      <h3>Modelación hidráulica</h3>
+      <p>Simulación de redes de distribución y sistemas de conducción para optimizar desempeño.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <h2>Ubicación</h2>
+  <p>Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</p>
+  <iframe src="https://www.google.com/maps?q=Plaza+Linares+Llanogrande+Rionegro+Antioquia&output=embed"></iframe>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>Teléfono y WhatsApp: +57 311 7654 559</p>
+  <p>Correo: cyc.ingenieria.proyectos@gmail.com</p>
+  <div class="social">
+    <a href="https://wa.me/573117654559" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/inge.cyc" target="_blank">📸 Instagram</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 CyC Ingeniería y Proyectos – Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
