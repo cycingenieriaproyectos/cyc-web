@@ -19,7 +19,9 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon y fuentes -->
+  <!-- Preload hero (ruta relativa para GitHub Pages) -->
+  <link rel="preload" href="hero-inicio.png" as="image" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -40,16 +42,18 @@
       position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;
       padding:0 20px;background:rgba(15,26,34,0.95);z-index:1200;border-bottom:1px solid rgba(255,255,255,0.03);
     }
+
     .nav-left{display:flex;gap:14px;align-items:center}
     .nav-left a{color:rgba(230,238,252,0.95);text-decoration:none;font-weight:600;font-family:'Poppins',sans-serif;padding:8px 10px;border-radius:6px;font-size:0.95rem}
     .nav-left a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
+
     .logo-wrap{display:flex;align-items:center;justify-content:flex-end;pointer-events:auto}
     .logo-wrap img{height:56px;border-radius:8px;transition:transform .28s ease,box-shadow .28s ease}
     .logo-wrap img:hover{transform:scale(1.04);box-shadow:0 8px 30px rgba(47,127,201,0.18)}
 
     main{padding-top:96px}
 
-    /* Hero: imagen original (ruta relativa) */
+    /* Hero: imagen de fondo (ruta relativa) */
     .hero{
       min-height:66vh;display:flex;align-items:flex-start;justify-content:flex-end;padding:56px 20px;
       background-image: url("hero-inicio.png");
@@ -59,26 +63,26 @@
       color:#fff;text-align:right;position:relative;
     }
 
-    /* .hero-inner alineado a la derecha, inmediatamente debajo del logo; más abajo para no tapar logo del fondo */
     .hero .inner{
       max-width:520px;
       width:100%;
       margin-right:20px;
-      padding-top:140px; /* baja el contenido varios renglones para no tapar el logo del fondo */
+      padding-top:140px;
       text-align:right;
       background:linear-gradient(180deg, rgba(255,255,255,0.00), rgba(255,255,255,0.00));
     }
 
-    /* Texto más oscuro para contraste con el fondo y colocado justo debajo del logo */
     .hero h1{
       font-family:'Poppins',sans-serif;font-size:2.4rem;margin:0 0 10px;color:rgba(8,12,16,0.98);line-height:1.05;
       letter-spacing:0.2px;
       text-shadow:0 1px 0 rgba(255,255,255,0.02);
     }
+
     .hero p.lead{
       margin:0 0 18px;color:rgba(8,12,16,0.95);font-size:1.05rem;font-weight:600;
       text-shadow:0 1px 0 rgba(255,255,255,0.02);
     }
+
     .hero .ctas{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
 
@@ -122,6 +126,34 @@
     .contact-details{display:flex;flex-direction:column;gap:10px}
     .contact-details .item{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
     .contact-details .item strong{color:var(--dark);display:block}
+
+    /* Social icons larger (Contacto) */
+    .contacts {
+      display:flex;
+      gap:12px;
+      margin-top:8px;
+    }
+    .contacts a {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:60px;
+      height:60px;
+      border-radius:10px;
+      background:rgba(47,127,201,0.08);
+      color:var(--accent);
+      text-decoration:none;
+      font-size:1.45rem;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .contacts a:hover {
+      transform:translateY(-4px) scale(1.03);
+      box-shadow:0 10px 30px rgba(47,127,201,0.12);
+    }
+    .contacts a.whatsapp { background: rgba(37,211,102,0.10); color: #25D366; }
+    .contacts a.email { background: rgba(66,133,244,0.06); color: #2f7fc9; }
+    .contacts a.instagram { background: linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf); color:#fff; }
+
     .socials{display:flex;gap:12px;margin-top:8px}
     .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(47,127,201,0.08);color:var(--accent);text-decoration:none}
 
@@ -150,9 +182,11 @@
       .hero .inner{margin-right:0;padding-top:28px;text-align:center}
       .hero h1{font-size:1.9rem}
       .hero p.lead{font-size:1rem}
+      .contacts a { width:52px; height:52px; font-size:1.25rem; }
     }
   </style>
 </head>
+
 <body>
 <header>
   <div class="nav-left">
@@ -169,7 +203,7 @@
 </header>
 
 <main>
-  <!-- Hero: imagen de fondo (ruta relativa) -->
+  <!-- Hero -->
   <section id="inicio" class="hero" role="region" aria-label="Inicio">
     <div class="inner">
       <h1>C&C Ingeniería y Proyectos</h1>
@@ -274,76 +308,54 @@
     </div>
   </section>
 
-  <!-- Contacto -->
-  <!-- Reemplazar la sección #contacto completa por este bloque -->
-<section id="contacto" aria-label="Contacto">
-  <h2>Contáctanos</h2>
-  <div class="contact-wrap">
-    <div class="contact-card">
-      <div class="contact-details">
-        <div class="item">
-          <i class="fas fa-envelope" style="color:var(--accent)"></i>
-          <div>
-            <strong>Email</strong>
-            <span style="display:block;color:var(--muted)">cyc.ingenieria.proyectos@gmail.com</span>
-          </div>
+  <!-- Contacto (con botón Instagram actualizado) -->
+  <section id="contacto" aria-label="Contacto">
+    <h2>Contáctanos</h2>
+    <div class="contact-wrap">
+      <div class="contact-card">
+        <div class="contact-details">
+          <div class="item"><i class="fas fa-envelope" style="color:var(--accent)"></i><div><strong>Email</strong><span style="display:block;color:var(--muted)">cyc.ingenieria.proyectos@gmail.com</span></div></div>
+          <div class="item"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i><div><strong>Dirección</strong><span style="display:block;color:var(--muted)">Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</span></div></div>
+          <div class="item"><i class="fas fa-phone" style="color:var(--accent)"></i><div><strong>Teléfono</strong><span style="display:block;color:var(--muted)">+57 311 765 4559</span></div></div>
         </div>
 
-        <div class="item">
-          <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
-          <div>
-            <strong>Dirección</strong>
-            <span style="display:block;color:var(--muted)">Rionegro, Antioquia – Sector Plaza Linares, Llanogrande</span>
-          </div>
-        </div>
+        <div style="margin-top:14px">
+          <div class="contacts" role="navigation" aria-label="Redes y contacto rápido">
+            <!-- WhatsApp -->
+            <a class="whatsapp" href="https://wa.me/573117654559" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp C&C Ingeniería">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
 
-        <div class="item">
-          <i class="fas fa-phone" style="color:var(--accent)"></i>
-          <div>
-            <strong>Teléfono</strong>
-            <span style="display:block;color:var(--muted)">+57 311 765 4559</span>
+            <!-- Email (mailto) -->
+            <a class="email" href="mailto:cyc.ingenieria.proyectos@gmail.com" aria-label="Enviar correo a C&C Ingeniería">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+
+            <!-- Instagram (handle: @inge.cyc) -->
+            <a class="instagram" href="https://instagram.com/inge.cyc" target="_blank" rel="noopener noreferrer" aria-label="Instagram C&C Ingeniería">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <div style="margin-top:14px">
-        <div class="contacts" role="navigation" aria-label="Redes y contacto rápido">
-          <!-- WhatsApp -->
-          <a class="whatsapp" href="https://wa.me/573117654559" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp C&C Ingeniería">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          </a>
-
-          <!-- Email (mailto) -->
-          <a class="email" href="mailto:cyc.ingenieria.proyectos@gmail.com" aria-label="Enviar correo a C&C Ingeniería">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-          </a>
-
-          <!-- Instagram (handle actualizado a @inge.cyc) -->
-          <a class="instagram" href="https://instagram.com/inge.cyc" target="_blank" rel="noopener noreferrer" aria-label="Instagram C&C Ingeniería">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-          </a>
-        </div>
+      <div class="contact-card">
+        <!-- Formspree form (integrado) -->
+        <form id="contactForm" action="https://formspree.io/f/xnjwrbqa" method="POST">
+          <input name="name" type="text" id="name" placeholder="Tu nombre" required>
+          <input name="email" type="email" id="email" placeholder="Tu correo" required>
+          <input name="subject" type="text" id="subject" placeholder="Asunto" required>
+          <textarea name="message" id="message" placeholder="Escribe tu mensaje" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn">Enviar mensaje</button>
+            <a class="secondary" href="mailto:cyc.ingenieria.proyectos@gmail.com">Enviar por correo</a>
+          </div>
+          <p id="formMsg" class="msg" style="display:none"></p>
+          <p style="font-size:0.85rem;color:var(--muted);margin-top:8px">Al enviar aceptas que usemos tus datos para contactarte. Consulta nuestra política de privacidad.</p>
+        </form>
       </div>
     </div>
-
-    <div class="contact-card">
-      <!-- Formspree form (integrado) -->
-      <form id="contactForm" action="https://formspree.io/f/xnjwrbqa" method="POST">
-        <input name="name" type="text" id="name" placeholder="Tu nombre" required>
-        <input name="email" type="email" id="email" placeholder="Tu correo" required>
-        <input name="subject" type="text" id="subject" placeholder="Asunto" required>
-        <textarea name="message" id="message" placeholder="Escribe tu mensaje" required></textarea>
-        <div class="form-actions">
-          <button type="submit" class="btn">Enviar mensaje</button>
-          <a class="secondary" href="mailto:cyc.ingenieria.proyectos@gmail.com">Enviar por correo</a>
-        </div>
-        <p id="formMsg" class="msg" style="display:none"></p>
-        <p style="font-size:0.85rem;color:var(--muted);margin-top:8px">Al enviar aceptas que usemos tus datos para contactarte. Consulta nuestra política de privacidad.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer>
