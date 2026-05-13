@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyC Ingeniería y Proyectos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -38,6 +39,13 @@
     section {
       padding: 100px 40px;
       min-height: 100vh;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     #inicio {
       background: linear-gradient(to right, #0a0a23, #1a1a40);
@@ -63,9 +71,6 @@
     }
     .btn:hover {
       background: #ff9800;
-    }
-    #portafolio {
-      background: #f4f4f4;
     }
     .grid {
       display: grid;
@@ -98,7 +103,7 @@
       color: white;
       margin: 0 10px;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.5em;
     }
   </style>
 </head>
@@ -117,44 +122,22 @@
 <section id="inicio">
   <h1>CyC Ingeniería y Proyectos</h1>
   <p>Transformamos ideas en proyectos viables de ingeniería civil, sanitaria y ambiental.</p>
-  <a class="btn" href="https://wa.me/573117654559" target="_blank">Contáctanos por WhatsApp</a>
+  <a class="btn" href="https://wa.me/573117654559" target="_blank">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
 </section>
 
 <section id="portafolio">
   <h2>Nuestro Portafolio de Servicios</h2>
   <div class="grid">
-    <div class="card">
-      <h3>Diseño estructural</h3>
-      <p>Cálculo y modelado de estructuras en concreto, acero y madera para edificaciones y obras civiles.</p>
-    </div>
-    <div class="card">
-      <h3>Diseño arquitectónico</h3>
-      <p>Desarrollo de planos, modelado 3D y optimización de espacios según normativa y funcionalidad.</p>
-    </div>
-    <div class="card">
-      <h3>Diseño hidrosanitario</h3>
-      <p>Planeación de redes de agua, alcantarillado sanitario y pluvial con cumplimiento normativo.</p>
-    </div>
-    <div class="card">
-      <h3>Supervisión e interventoría</h3>
-      <p>Control y seguimiento de proyectos para garantizar cumplimiento técnico, financiero y ambiental.</p>
-    </div>
-    <div class="card">
-      <h3>Diseño de PTARD y PTAP</h3>
-      <p>Soluciones adaptadas a cada contexto, considerando eficiencia operativa y costos.</p>
-    </div>
-    <div class="card">
-      <h3>Permisos de vertimientos</h3>
-      <p>Trámite y gestión ante entidades ambientales para disposición adecuada de aguas residuales.</p>
-    </div>
-    <div class="card">
-      <h3>Ocupación de cauce</h3>
-      <p>Evaluación de impactos y obtención de permisos para proyectos de infraestructura.</p>
-    </div>
-    <div class="card">
-      <h3>Modelación hidráulica</h3>
-      <p>Simulación de redes de distribución y sistemas de conducción para optimizar desempeño.</p>
-    </div>
+    <div class="card"><h3>Diseño estructural</h3><p>Modelado de estructuras en concreto, acero y madera.</p></div>
+    <div class="card"><h3>Diseño arquitectónico</h3><p>Planos, modelado 3D y optimización de espacios.</p></div>
+    <div class="card"><h3>Diseño hidrosanitario</h3><p>Redes de agua, alcantarillado sanitario y pluvial.</p></div>
+    <div class="card"><h3>Supervisión e interventoría</h3><p>Control técnico, financiero y ambiental.</p></div>
+    <div class="card"><h3>Diseño de PTARD y PTAP</h3><p>Soluciones eficientes y adaptadas al contexto.</p></div>
+    <div class="card"><h3>Permisos de vertimientos</h3><p>Gestión ante entidades ambientales.</p></div>
+    <div class="card"><h3>Ocupación de cauce</h3><p>Evaluación de impactos y permisos.</p></div>
+    <div class="card"><h3>Modelación hidráulica</h3><p>Simulación de redes y sistemas de conducción.</p></div>
   </div>
 </section>
 
@@ -166,17 +149,33 @@
 
 <section id="contacto">
   <h2>Contacto</h2>
-  <p>Teléfono y WhatsApp: +57 311 7654 559</p>
-  <p>Correo: cyc.ingenieria.proyectos@gmail.com</p>
+  <p><i class="fab fa-whatsapp"></i> +57 311 7654 559</p>
+  <p><i class="fas fa-envelope"></i> cyc.ingenieria.proyectos@gmail.com</p>
   <div class="social">
-    <a href="https://wa.me/573117654559" target="_blank">💬 WhatsApp</a>
-    <a href="https://www.instagram.com/inge.cyc" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/573117654559" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/inge.cyc" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </section>
 
 <footer>
   © 2026 CyC Ingeniería y Proyectos – Todos los derechos reservados.
 </footer>
+
+<script>
+  // Animaciones suaves al hacer scroll
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
